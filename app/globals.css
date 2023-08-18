@@ -108,7 +108,7 @@ body {
 /* Footer */
 @layer components {
   .footer {
-    @apply flex-col paddings w-full gap-20 bg-light-white;
+    @apply flex-col paddings w-full gap-20 ;
   }
 
   .footer_copyright {
@@ -139,7 +139,7 @@ body {
 /* Navbar */
 @layer components {
   .navbar {
-    @apply py-5 px-8 border-b border-nav-border gap-4;
+    @apply py-5 px-8 border-b  gap-4;
   }
 }
 
@@ -151,11 +151,10 @@ body {
 }
 
 /* Profile Card */
-@layer components {
-  
-}
+@layer components { 
 .profile_card-title {
   @apply justify-end items-end w-full h-1/3 bg-gradient-to-b from-transparent to-black/50 rounded-b-2xl gap-2 absolute bottom-0 right-0 font-semibold text-lg text-white p-4;
+}
 }
 
 /* Project Form */

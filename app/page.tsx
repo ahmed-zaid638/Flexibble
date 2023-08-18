@@ -4,6 +4,7 @@ export const metadata = {
   title: "flexibble"
 }
 
+
 function Home() {
   return (
     <section className="flex-start flex-col paddings mb-16">
