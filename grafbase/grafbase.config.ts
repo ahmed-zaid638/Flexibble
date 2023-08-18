@@ -5,11 +5,11 @@ const User = g.model("User", {
   email: g.string().unique(),
   avatarUrl: g.url(),
   description: g.string().optional(),
-  githubUrl : g.url().optional(),
+  githubUrl: g.url().optional(),
   lindedInUrl: g.url().optional(),
-  projects : g.relation(() => Project).list().optional()
-  
+  projects: g.relation(() => Project).list().optional()
 })
+
 const Project = g.model("Project", {
   title: g.string(),
   description: g.string().optional(),
@@ -18,10 +18,8 @@ const Project = g.model("Project", {
   githubUrl: g.url(),
   category: g.string().search(),
   createdBy: g.relation(() => User )
-  
-  
-})
 
+})
 
 
 

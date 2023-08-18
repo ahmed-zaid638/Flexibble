@@ -5,9 +5,11 @@ import logo from "../public/logo.svg"
 import Image from "next/image"
 import { NavLinks } from "../constants"
 import AuthProvider from './AuthProvider'
+import { getCurrentUser } from '@/lib/session'
+import { userAgent } from 'next/server'
 
-function Navbar() {
-    const session = 4 > 8
+async function Navbar() {
+    const session = await getCurrentUser()
     return (
         <section className='navbar flexBetween'>
             <div className='flex-1 flexStart gap-10   '>
@@ -27,20 +29,27 @@ function Navbar() {
                 }
             </ul>
             <div className="">
-                {session ? (
+                {session?.user ? (
                     <>
-                        <div> UserPhote</div>
+                        {session?.user?.image && (
+                            <Image
+                                src={session.user.image}
+                                height={40}
+                                width={40} alt={''}                                >
+
+                            </Image>
+
+                        )}
                         <Link href={"#"}>
                             Share your work
                         </Link>
                     </>
-                ) :
-                    (
-                        <AuthProvider />
-                    )
+                ) : (
+                    <AuthProvider />
+                )
                 }
             </div>
-        </section>
+        </section >
     )
 }
 

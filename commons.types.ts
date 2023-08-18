@@ -50,6 +50,7 @@ export interface SessionInterface extends Session {
     name: string;
     email: string;
     avatarUrl: string;
+   
   };
 }
 
@@ -61,3 +62,11 @@ export interface ProjectForm {
   githubUrl: string;
   category: string;
 }
+
+type Buttons = {
+  up: string;
+  right: string;
+  down: string;
+  left: string;
+};
+
